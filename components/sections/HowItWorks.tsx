@@ -8,7 +8,6 @@ import {
   Calendar,
   CreditCard,
   CheckCircle,
-  ArrowRight,
 } from "lucide-react";
 
 const steps = [
