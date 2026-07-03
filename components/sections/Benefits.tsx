@@ -72,13 +72,6 @@ export const Benefits: React.FC = () => {
     },
   };
 
-  const hoverVariants = {
-    hover: {
-      y: -8,
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  };
-
   return (
     <section id="benefits" className="py-20 bg-white">
       <Container>
@@ -110,8 +103,13 @@ export const Benefits: React.FC = () => {
               <motion.div
                 key={benefit.id}
                 variants={itemVariants}
-                whileHover="hover"
-                variants={hoverVariants}
+                whileHover={{
+                  y: -8,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeOut",
+                  },
+                }}
               >
                 <Card className="h-full">
                   <div className="flex flex-col h-full">
