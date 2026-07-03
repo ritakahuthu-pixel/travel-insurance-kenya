@@ -3,7 +3,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { Container, Button, Input, Card, LoadingSpinner } from "@components/shared";
+import { Container, Button, Input, Card } from "@components/shared";
 import { Navbar } from "@components/layout/Navbar";
 import { Footer } from "@components/layout/Footer";
 import { motion } from "framer-motion";
@@ -17,12 +17,11 @@ export default function LoginPage() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [apiError, setApiError] = React.useState<string | null>(null);
   const [isSuccess, setIsSuccess] = React.useState(false);
-
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm<LoginFormData>({
   } = useForm<LoginFormData>({
     mode: "onBlur",
     defaultValues: {
@@ -56,8 +55,9 @@ export default function LoginPage() {
       } else {
         setApiError(response.message || "Login failed. Please try again.");
       }
-    } catch (error) {
-      setApiError("An error occurred. Please try again.");
+    } catch {
+  setApiError("An error occurred. Please try again.");
+}
     } finally {
       setIsSubmitting(false);
     }
