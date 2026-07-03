@@ -36,33 +36,29 @@ export default function LoginPage() {
     setApiError(null);
 
     try {
-  const response = await authService.login(data);
+      const response = await authService.login(data);
 
-  if (response.success && response.data) {
-    localStorage.setItem("auth_token", response.data.token);
-    localStorage.setItem(
-      "user_data",
-      JSON.stringify(response.data.user)
-    );
+      if (response.success && response.data) {
+        localStorage.setItem("auth_token", response.data.token);
+        localStorage.setItem(
+          "user_data",
+          JSON.stringify(response.data.user)
+        );
 
-    if (data.rememberMe) {
-      localStorage.setItem("remember_email", data.email);
-    }
+        if (data.rememberMe) {
+          localStorage.setItem("remember_email", data.email);
+        }
 
-    setIsSuccess(true);
+        setIsSuccess(true);
 
-    setTimeout(() => {
-      window.location.href = "/dashboard";
-    }, 1000);
-  } else {
-    setApiError(response.message || "Login failed. Please try again.");
-  }
-} catch {
-  setApiError("An error occurred. Please try again.");
-} finally {
-  setIsSubmitting(false);
-}
-}
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 1000);
+      } else {
+        setApiError(response.message || "Login failed. Please try again.");
+      }
+    } catch {
+      setApiError("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -196,8 +192,11 @@ export default function LoginPage() {
 
               {/* Register Link */}
               <p className="text-center text-gray-600">
-                Don&apos;t have an account?
-                <Link href="/register" className="text-primary font-bold hover:text-opacity-80 transition-smooth">
+                Don&apos;t have an account?{" "}
+                <Link
+                  href="/register"
+                  className="ml-1 text-primary font-bold hover:text-opacity-80 hover:underline transition-smooth"
+                >
                   Create one now
                 </Link>
               </p>
