@@ -94,7 +94,7 @@ export const Testimonials: React.FC = () => {
 
                 {/* Testimonial Text */}
                 <p className="text-gray-700 leading-relaxed mb-6 italic">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
 
                 {/* Author */}
