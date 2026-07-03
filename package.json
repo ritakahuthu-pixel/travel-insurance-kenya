@@ -1,7 +1,7 @@
 {
-  "name": "travel-insurance-kenya",
+  "name": "safiri-cover-kenya",
   "version": "1.0.0",
-  "description": "Modern travel insurance web application for Kenya",
+  "description": "Safiri Cover Kenya - Affordable daily travel insurance for Kenya",
   "private": true,
   "scripts": {
     "dev": "next dev",
