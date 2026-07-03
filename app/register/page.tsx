@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Container, Button, Input, Card } from "@components/shared";
 import { Navbar } from "@components/layout/Navbar";
@@ -9,7 +9,7 @@ import { Footer } from "@components/layout/Footer";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, Shield, User, Phone, FileText, Users } from "lucide-react";
 import { validators, errorMessages } from "@utils/validators";
-import { RegisterFormData } from "@types/index";
+import type { RegisterFormData } from "@types";
 import { authService } from "@services/index";
 
 export default function RegisterPage() {
