@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import { apiCall } from "@lib/api-client";
-import { ApiResponse } from "@types/index";
 
 interface UseApiOptions {
   onSuccess?: (data: unknown) => void;
