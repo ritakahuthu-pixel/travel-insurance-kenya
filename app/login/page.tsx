@@ -17,46 +17,51 @@ export default function LoginPage() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [apiError, setApiError] = React.useState<string | null>(null);
   const [isSuccess, setIsSuccess] = React.useState(false);
+  
   const {
   register,
   handleSubmit,
   formState: { errors },
 } = useForm<LoginFormData>({
-  } = useForm<LoginFormData>({
-    mode: "onBlur",
-    defaultValues: {
-      email: "",
-      password: "",
-      rememberMe: false,
-    },
-  });
-
+  mode: "onBlur",
+  defaultValues: {
+    email: "",
+    password: "",
+    rememberMe: false,
+  },
+});
+  
   const onSubmit = async (data: LoginFormData) => {
     setIsSubmitting(true);
     setApiError(null);
 
     try {
-      const response = await authService.login(data);
-      if (response.success && response.data) {
-        // Store token and user data
-        localStorage.setItem("auth_token", response.data.token);
-        localStorage.setItem("user_data", JSON.stringify(response.data.user));
-        
-        // Store "remember me" preference
-        if (data.rememberMe) {
-          localStorage.setItem("remember_email", data.email);
-        }
+  const response = await authService.login(data);
 
-        setIsSuccess(true);
-        // Redirect to dashboard after 1 second
-        setTimeout(() => {
-          window.location.href = "/dashboard";
-        }, 1000);
-      } else {
-        setApiError(response.message || "Login failed. Please try again.");
-      }
-    } catch {
+  if (response.success && response.data) {
+    localStorage.setItem("auth_token", response.data.token);
+    localStorage.setItem(
+      "user_data",
+      JSON.stringify(response.data.user)
+    );
+
+    if (data.rememberMe) {
+      localStorage.setItem("remember_email", data.email);
+    }
+
+    setIsSuccess(true);
+
+    setTimeout(() => {
+      window.location.href = "/dashboard";
+    }, 1000);
+  } else {
+    setApiError(response.message || "Login failed. Please try again.");
+  }
+} catch {
   setApiError("An error occurred. Please try again.");
+} finally {
+  setIsSubmitting(false);
+}
 }
     } finally {
       setIsSubmitting(false);
@@ -191,7 +196,7 @@ export default function LoginPage() {
 
               {/* Register Link */}
               <p className="text-center text-gray-600">
-                Don't have an account?{" "}
+                Don&apos;t have an account?
                 <Link href="/register" className="text-primary font-bold hover:text-opacity-80 transition-smooth">
                   Create one now
                 </Link>
