@@ -9,7 +9,7 @@ import { Footer } from "@components/layout/Footer";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, Shield } from "lucide-react";
 import { validators, errorMessages } from "@utils/validators";
-import { LoginFormData } from "@types/index";
+import type { LoginFormData } from "@types";
 import { authService } from "@services/index";
 
 export default function LoginPage() {
