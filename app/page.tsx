@@ -1,13 +1,19 @@
 import { Navbar } from "@components/layout/Navbar";
-import { Hero } from "@components/sections/Hero";
+import { Hero, Benefits, HowItWorks, Testimonials, FAQ } from "@components/sections";
 import { Footer } from "@components/layout/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Navbar />
-      <Hero />
+      <main>
+        <Hero />
+        <Benefits />
+        <HowItWorks />
+        <Testimonials />
+        <FAQ />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
