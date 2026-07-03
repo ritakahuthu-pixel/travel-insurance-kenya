@@ -98,7 +98,6 @@ export const HowItWorks: React.FC = () => {
         {/* Mobile Timeline */}
         <div className="md:hidden space-y-8">
           {steps.map((step, index) => {
-            const Icon = step.icon;
             return (
               <motion.div
                 key={step.id}
