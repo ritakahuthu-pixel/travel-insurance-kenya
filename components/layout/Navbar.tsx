@@ -24,13 +24,13 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center gap-3">
   <Image
-    src="/logo.png"
-    alt="Safiri Cover"
-    width={50}
-    height={50}
-    priority
-    className="rounded-xl"
-  />
+  src="/logo%20(2).png"
+  alt="Safiri Cover"
+  width={50}
+  height={50}
+  priority
+  className="rounded-xl"
+/>
 
   <div className="hidden sm:block">
     <h1 className="text-xl font-bold text-gray-900">
