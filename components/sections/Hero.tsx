@@ -100,29 +100,33 @@ export const Hero: React.FC = () => {
           </div>
 
                   {/* Right Illustration */}
-      <motion.div
-        variants={itemVariants}
-        className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
-      >
-        <motion.div
-          animate={{
-            y: [0, 15, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative"
-        >
-          <Image
-  src="/logo.png"
-  alt="Safiri Cover"
-  width={500}
-  height={500}
-  priority
-  className="w-[420px] h-auto object-contain drop-shadow-2xl"
-/>
+<motion.div
+  variants={itemVariants}
+  className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
+>
+  <motion.div
+    animate={{
+      y: [0, 15, 0],
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="relative"
+  >
+    <Image
+      src="/logo.png"
+      alt="Safiri Cover"
+      width={500}
+      height={500}
+      priority
+      className="w-[420px] h-auto object-contain drop-shadow-2xl"
+    />
+  </motion.div>
+</motion.div>
+
+        </motion.div>
       </Container>
     </section>
   );
