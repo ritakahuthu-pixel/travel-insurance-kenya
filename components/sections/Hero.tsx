@@ -49,14 +49,17 @@ export const Hero: React.FC = () => {
               className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
             >
               <Shield size={18} />
-              <span className="text-sm font-semibold">Trusted by 500K+ Kenyans</span>
+              <span className="text-sm font-semibold">
+                Trusted by 500K+ Kenyans
+              </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6"
             >
-              Travel Protected<br />
+              Travel Protected
+              <br />
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Across Kenya
               </span>
@@ -66,7 +69,9 @@ export const Hero: React.FC = () => {
               variants={itemVariants}
               className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-md"
             >
-              Affordable daily travel insurance with instant M-Pesa payments and digital policy certificates. Get protected for just KSh 10 per day.
+              Affordable daily travel insurance with instant M-Pesa payments and
+              digital policy certificates. Get protected for just KSh 10 per
+              day.
             </motion.p>
 
             <motion.div
@@ -75,57 +80,69 @@ export const Hero: React.FC = () => {
             >
               <Button size="lg" className="group">
                 Get Covered
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={20}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </Button>
+
               <Button variant="outline" size="lg">
                 Learn More
               </Button>
             </motion.div>
 
             {/* Trust Indicators */}
-            <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200"
+            >
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-primary">500K+</p>
+                <p className="text-2xl md:text-3xl font-bold text-primary">
+                  500K+
+                </p>
                 <p className="text-sm text-gray-600 mt-1">Active Users</p>
               </div>
+
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-secondary">100%</p>
+                <p className="text-2xl md:text-3xl font-bold text-secondary">
+                  100%
+                </p>
                 <p className="text-sm text-gray-600 mt-1">Secure</p>
               </div>
+
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-accent">24/7</p>
+                <p className="text-2xl md:text-3xl font-bold text-accent">
+                  24/7
+                </p>
                 <p className="text-sm text-gray-600 mt-1">Support</p>
               </div>
             </motion.div>
           </div>
 
-                  {/* Right Illustration */}
-<motion.div
-  variants={itemVariants}
-  className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
->
-  <motion.div
-    animate={{
-      y: [0, 15, 0],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="relative"
-  >
-    <Image
-      src="/logo.png"
-      alt="Safiri Cover"
-      width={500}
-      height={500}
-      priority
-      className="w-[420px] h-auto object-contain drop-shadow-2xl"
-    />
-  </motion.div>
-</motion.div>
-
+          {/* Right Illustration */}
+          <motion.div
+            variants={itemVariants}
+            className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, 15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative"
+            >
+              <Image
+                src="/logo.png"
+                alt="Safiri Cover"
+                width={500}
+                height={500}
+                priority
+                className="w-[420px] h-auto object-contain drop-shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
         </motion.div>
       </Container>
     </section>
