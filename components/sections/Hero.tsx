@@ -122,12 +122,11 @@ export const Hero: React.FC = () => {
             height={500}
             priority
             className="w-[420px] h-auto object-contain drop-shadow-2xl"
-          />
-        </motion.div>
-      </motion.div>
-
-    </motion.div>
-  </Container>
-</section>
-);
+        
+          </motion.div>
+      </Container>
+    </section>
+  );
 };
+
+export default Hero;
