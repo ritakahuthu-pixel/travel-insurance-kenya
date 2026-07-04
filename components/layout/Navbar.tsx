@@ -2,8 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@components/shared";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
@@ -21,12 +22,25 @@ export const Navbar: React.FC = () => {
     <nav className="bg-white/95 backdrop-blur-sm shadow-soft sticky top-0 z-50">
       <Container>
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <div className="w-10 h-10 bg-primary rounded-2xl flex items-center justify-center text-white">
-              <Shield size={20} />
-            </div>
-            <span className="hidden sm:inline text-gray-900">Safiri Cover</span>
-          </Link>
+          <Link href="/" className="flex items-center gap-3">
+  <Image
+    src="/logo.png"
+    alt="Safiri Cover"
+    width={50}
+    height={50}
+    priority
+    className="rounded-xl"
+  />
+
+  <div className="hidden sm:block">
+    <h1 className="text-xl font-bold text-gray-900">
+      Safiri Cover
+    </h1>
+    <p className="text-xs text-gray-500">
+      Travel Insurance Kenya
+    </p>
+  </div>
+</Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8">
