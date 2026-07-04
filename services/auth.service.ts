@@ -1,5 +1,9 @@
 import { apiCall } from "@lib/api-client";
-import { ApiResponse, AuthResponse, LoginFormData } from "@types/index";
+import type {
+  ApiResponse,
+  AuthResponse,
+  LoginFormData,
+} from "@/types";
 
 export const authService = {
   login: async (data: LoginFormData): Promise<ApiResponse<AuthResponse>> => {
