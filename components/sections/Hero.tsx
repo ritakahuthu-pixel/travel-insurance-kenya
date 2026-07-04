@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Button } from "@components/shared";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield } from "lucide-react";
+import Image from "next/image";
 
 export const Hero: React.FC = () => {
   const containerVariants = {
@@ -98,31 +99,29 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right Illustration */}
-          <motion.div
-            variants={itemVariants}
-            className="relative h-96 md:h-full hidden lg:block"
-          >
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* Gradient Placeholder for Illustration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl blur-2xl"></div>
-              <motion.div
-                animate={{
-                  y: [0, 20, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative w-64 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl flex items-center justify-center shadow-2xl"
-              >
-                <Shield size={120} className="text-primary/40" />
-              </motion.div>
-            </div>
-          </motion.div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-};
+      {/* Right Illustration */}
+<motion.div
+  variants={itemVariants}
+  className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
+>
+  <motion.div
+    animate={{
+      y: [0, 15, 0],
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="relative"
+  >
+    <Image
+      src="/logo (2).png"
+      alt="Safiri Cover"
+      width={500}
+      height={500}
+      priority
+      className="w-[420px] h-auto object-contain drop-shadow-2xl"
+    />
+  </motion.div>
+</motion.div>
