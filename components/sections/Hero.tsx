@@ -116,14 +116,13 @@ export const Hero: React.FC = () => {
           className="relative"
         >
           <Image
-            src="/logo (2).png"
-            alt="Safiri Cover"
-            width={500}
-            height={500}
-            priority
-            className="w-[420px] h-auto object-contain drop-shadow-2xl"
-        
-          </motion.div>
+  src="/logo.png"
+  alt="Safiri Cover"
+  width={500}
+  height={500}
+  priority
+  className="w-[420px] h-auto object-contain drop-shadow-2xl"
+/>
       </Container>
     </section>
   );
