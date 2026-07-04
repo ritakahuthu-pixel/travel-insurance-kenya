@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-            {/* Right Illustration */}
+                  {/* Right Illustration */}
       <motion.div
         variants={itemVariants}
         className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
@@ -125,6 +125,7 @@ export const Hero: React.FC = () => {
           />
         </motion.div>
       </motion.div>
+
     </motion.div>
   </Container>
 </section>
