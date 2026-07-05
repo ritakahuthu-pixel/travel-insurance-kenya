@@ -19,28 +19,28 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-lg">
       <Container>
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-5">
           <Link href="/" className="flex items-center gap-3">
   <Image
-  src="/logo%20(2).png"
+  src="/logo.png"
   alt="Safiri Cover"
-  width={50}
-  height={50}
+  width={70}
+  height={70}
   priority
-  className="rounded-xl"
+  className="object-contain"
 />
 
-  <div className="hidden sm:block">
-    <h1 className="text-xl font-bold text-gray-900">
-      Safiri Cover
-    </h1>
-    <p className="text-xs text-gray-500">
-      Travel Insurance Kenya
-    </p>
-  </div>
-</Link>
+  <div className="hidden sm:block leading-tight">
+  <h1 className="text-2xl font-extrabold text-slate-900">
+    Safiri Cover
+  </h1>
+
+  <p className="text-sm text-slate-500">
+    Travel with Confidence
+  </p>
+</div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8">
@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-primary transition-smooth font-medium text-sm"
+                className="relative text-slate-700 font-semibold hover:text-primary transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -58,13 +58,13 @@ export const Navbar: React.FC = () => {
           <div className="flex gap-3">
             <Link
               href="/login"
-              className="hidden sm:inline px-4 py-2 text-primary hover:bg-primary/5 rounded-2xl transition-smooth font-semibold"
+              className="hidden sm:flex items-center px-5 py-2 rounded-full font-semibold border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
             >
               Login
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 bg-primary text-white rounded-2xl hover:shadow-card transition-smooth font-semibold shadow-soft"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 text-white font-bold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               Get Covered
             </Link>
