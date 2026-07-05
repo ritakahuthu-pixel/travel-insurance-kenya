@@ -56,20 +56,23 @@ export const Navbar: React.FC = () => {
   ))}
 </div>
 
-          <div className="flex gap-3">
-            <Link
-              href="/login"
-              className="hidden sm:flex items-center px-5 py-2 rounded-full font-semibold border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-            >
-              Login
-            </Link>
-            <Link
-              href="/register"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 text-white font-bold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
-            >
-              Get Covered
-            </Link>
-          </div>
+          <div className="mt-4 flex flex-col gap-3">
+  <Link
+    href="/login"
+    onClick={() => setIsOpen(false)}
+    className="w-full rounded-full border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
+  >
+    Login
+  </Link>
+
+  <Link
+    href="/register"
+    onClick={() => setIsOpen(false)}
+    className="w-full rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-4 py-3 text-center font-bold text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
+  >
+    Get Covered
+  </Link>
+</div>
 
           {/* Mobile Menu Button */}
           <button
