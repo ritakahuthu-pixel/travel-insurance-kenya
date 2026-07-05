@@ -56,19 +56,17 @@ export const Navbar: React.FC = () => {
   ))}
 </div>
 
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="hidden md:flex items-center gap-4">
   <Link
     href="/login"
-    onClick={() => setIsOpen(false)}
-    className="w-full rounded-full border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
+    className="rounded-full border border-primary px-5 py-2 font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
   >
     Login
   </Link>
 
   <Link
     href="/register"
-    onClick={() => setIsOpen(false)}
-    className="w-full rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-4 py-3 text-center font-bold text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
+    className="rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-6 py-3 font-bold text-white shadow-lg hover:scale-105 transition-all duration-300"
   >
     Get Covered
   </Link>
