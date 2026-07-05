@@ -26,8 +26,8 @@ export const Navbar: React.FC = () => {
   <Image
     src="/logo.png"
     alt="Safiri Cover"
-    width={70}
-    height={70}
+    width={80}
+    height={80}
     priority
     className="object-contain"
   />
@@ -85,25 +85,39 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden pb-4 border-t border-gray-100 pt-4 space-y-2"
-          >
-            {navLinks.map((link) => (
-  <Link
-    key={link.href}
-    href={link.href}
-    onClick={() => setIsOpen(false)}
-    className="block px-4 py-2 text-gray-600 hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-300"
+  <motion.div
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    className="md:hidden mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl space-y-2"
   >
-    {link.label}
-  </Link>
-))}
-          </motion.div>
-        )}
-      </Container>
-    </nav>
-  );
-};
+    {navLinks.map((link) => (
+      <Link
+        key={link.href}
+        href={link.href}
+        onClick={() => setIsOpen(false)}
+        className="block px-4 py-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-all duration-300"
+      >
+        {link.label}
+      </Link>
+    ))}
+
+    <div className="mt-4 flex flex-col gap-3">
+      <Link
+        href="/login"
+        onClick={() => setIsOpen(false)}
+        className="w-full rounded-full border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
+      >
+        Login
+      </Link>
+
+      <Link
+        href="/register"
+        onClick={() => setIsOpen(false)}
+        className="w-full rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-4 py-3 text-center font-bold text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
+      >
+        Get Covered
+      </Link>
+    </div>
+  </motion.div>
+)}
