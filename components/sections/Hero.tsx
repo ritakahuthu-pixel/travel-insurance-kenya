@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
               }}
               className="relative"
             >
-              <div className="relative w-full h-[600px]">
+              <div className="relative w-[550px] h-[600px]">
   {/* Mount Kenya background */}
   <Image
     src="/mount-kenya.webp"
