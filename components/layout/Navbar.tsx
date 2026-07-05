@@ -24,33 +24,36 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-5">
           <Link href="/" className="flex items-center gap-3">
   <Image
-  src="/logo.png"
-  alt="Safiri Cover"
-  width={70}
-  height={70}
-  priority
-  className="object-contain"
-/>
+    src="/logo.png"
+    alt="Safiri Cover"
+    width={70}
+    height={70}
+    priority
+    className="object-contain"
+  />
 
   <div className="hidden sm:block leading-tight">
-  <h1 className="text-2xl font-extrabold text-slate-900">
-    Safiri Cover
-  </h1>
+    <h1 className="text-2xl font-extrabold text-slate-900">
+      Safiri Cover
+    </h1>
 
-  <p className="text-sm text-slate-500">
-    Travel with Confidence
-  </p>
-</div>
+    <p className="text-sm text-slate-500">
+      Travel with Confidence
+    </p>
+  </div>
+</Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8">
+{/* Desktop Menu */}
+<div className="hidden md:flex gap-8">
             {navLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
-                className="relative text-slate-700 font-semibold hover:text-primary transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-              >
-                {link.label}
+              <Link
+  key={link.href}
+  href={link.href}
+  className="relative text-slate-700 font-semibold hover:text-primary transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+>
+  {link.label}
+</Link>
               </a>
             ))}
           </div>
@@ -89,11 +92,13 @@ export const Navbar: React.FC = () => {
           >
             {navLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-2 text-gray-600 hover:bg-primary/5 rounded-lg transition-smooth"
-              >
-                {link.label}
+                <Link
+  key={link.href}
+  href={link.href}
+  className="block px-4 py-2 text-gray-600 hover:bg-primary/5 rounded-lg transition-smooth"
+>
+  {link.label}
+</Link>
               </a>
             ))}
           </motion.div>
