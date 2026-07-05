@@ -123,3 +123,8 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
+        )}
+      </Container>
+    </nav>
+  );
+};
