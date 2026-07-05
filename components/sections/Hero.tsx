@@ -28,15 +28,19 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-100 blur-3xl opacity-40" />
-<div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-emerald-100 blur-3xl opacity-40" />
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
-      </div>
+  <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-emerald-50 pt-24 pb-24 min-h-screen">
 
-      <Container>
+    {/* Decorative background */}
+    <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-100 blur-3xl opacity-40" />
+    <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-emerald-100 blur-3xl opacity-40" />
+
+    {/* Background Elements */}
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
+    </div>
+
+    <Container>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -168,5 +172,13 @@ export const Hero: React.FC = () => {
       height={170}
       className="drop-shadow-2xl"
     />
-  </motion.div>
-</div>
+              </motion.div>
+          </motion.div>
+        </motion.div>
+      </Container>
+    </section>
+  );
+};
+
+export default Hero;
+
