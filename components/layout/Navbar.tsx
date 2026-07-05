@@ -81,41 +81,45 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+                {/* Mobile Menu */}
         {isOpen && (
-  <motion.div
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    className="md:hidden mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl space-y-2"
-  >
-    {navLinks.map((link) => (
-      <Link
-        key={link.href}
-        href={link.href}
-        onClick={() => setIsOpen(false)}
-        className="block px-4 py-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-all duration-300"
-      >
-        {link.label}
-      </Link>
-    ))}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl space-y-2"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
 
-    <div className="mt-4 flex flex-col gap-3">
-      <Link
-        href="/login"
-        onClick={() => setIsOpen(false)}
-        className="w-full rounded-full border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
-      >
-        Login
-      </Link>
+            <div className="mt-4 flex flex-col gap-3">
+              <Link
+                href="/login"
+                onClick={() => setIsOpen(false)}
+                className="w-full rounded-full border border-primary px-4 py-3 text-center font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                Login
+              </Link>
 
-      <Link
-        href="/register"
-        onClick={() => setIsOpen(false)}
-        className="w-full rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-4 py-3 text-center font-bold text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
-      >
-        Get Covered
-      </Link>
-    </div>
-  </motion.div>
-)}
+              <Link
+                href="/register"
+                onClick={() => setIsOpen(false)}
+                className="w-full rounded-full bg-gradient-to-r from-blue-700 to-emerald-600 px-4 py-3 text-center font-bold text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
+              >
+                Get Covered
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </Container>
+    </nav>
+  );
+};
