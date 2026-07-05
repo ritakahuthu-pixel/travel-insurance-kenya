@@ -100,7 +100,7 @@ export const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            <div className="mt-4 flex flex-col gap-3">
+                        <div className="mt-4 flex flex-col gap-3">
               <Link
                 href="/login"
                 onClick={() => setIsOpen(false)}
@@ -118,11 +118,6 @@ export const Navbar: React.FC = () => {
               </Link>
             </div>
           </motion.div>
-        )}
-      </Container>
-    </nav>
-  );
-};
         )}
       </Container>
     </nav>
