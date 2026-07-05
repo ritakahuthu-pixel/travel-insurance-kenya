@@ -28,7 +28,8 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-background via-white to-background pt-20 pb-20 relative overflow-hidden">
+    <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-100 blur-3xl opacity-40" />
+<div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-emerald-100 blur-3xl opacity-40" />
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
@@ -133,20 +134,39 @@ export const Hero: React.FC = () => {
               }}
               className="relative"
             >
-              <Image
-                src="/logo.png"
-                alt="Safiri Cover"
-                width={500}
-                height={500}
-                priority
-                className="w-[420px] h-auto object-contain drop-shadow-2xl"
-              />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-};
+              <div className="relative w-full h-[600px]">
+  {/* Mount Kenya background */}
+  <Image
+    src="/mount-kenya.webp"
+    alt="Mount Kenya"
+    fill
+    className="object-contain opacity-25"
+  />
 
-export default Hero;
+  {/* Big Five */}
+  <Image
+    src="/big-five.webp"
+    alt="Kenya Big Five Wildlife"
+    fill
+    className="object-contain z-10"
+  />
+
+  {/* Floating logo */}
+  <motion.div
+    animate={{ y: [0, -12, 0] }}
+    transition={{
+      repeat: Infinity,
+      duration: 5,
+      ease: "easeInOut",
+    }}
+    className="absolute top-6 left-6 z-20"
+  >
+    <Image
+      src="/logo.png"
+      alt="Safiri Cover"
+      width={170}
+      height={170}
+      className="drop-shadow-2xl"
+    />
+  </motion.div>
+</div>
