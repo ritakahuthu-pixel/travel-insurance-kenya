@@ -29,8 +29,7 @@ export const Hero: React.FC = () => {
 
   return (
   <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-emerald-50 pt-24 pb-24 min-h-screen">
-
-    {/* Decorative background */}
+    {/* Decorative Background */}
     <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-100 blur-3xl opacity-40" />
     <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-emerald-100 blur-3xl opacity-40" />
 
@@ -172,7 +171,10 @@ export const Hero: React.FC = () => {
       height={170}
       className="drop-shadow-2xl"
     />
-              </motion.div>
+                </motion.div>
+</div>
+
+            </motion.div>
           </motion.div>
         </motion.div>
       </Container>
