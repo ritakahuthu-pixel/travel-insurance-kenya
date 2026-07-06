@@ -126,9 +126,9 @@ export const Hero: React.FC = () => {
           {/* Right Illustration */}
 <motion.div
   variants={itemVariants}
-  className="relative hidden lg:flex items-center justify-center h-[700px] w-full"
+  className="relative hidden lg:block h-[700px] w-full"
 >
-  {/* Mountain Background */}
+  {/* Mountain fills the entire right side */}
   <div className="absolute inset-0 rounded-3xl overflow-hidden">
     <Image
       src="/mount-kenya.png"
@@ -138,7 +138,7 @@ export const Hero: React.FC = () => {
       className="object-cover"
     />
 
-    {/* Fade mountain into the left side */}
+    {/* Fade into the left side */}
     <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-sky-50/90" />
   </div>
 
@@ -154,8 +154,8 @@ export const Hero: React.FC = () => {
     <Image
       src="/logo.png"
       alt="Safiri Cover"
-      width={170}
-      height={170}
+      width={160}
+      height={160}
     />
   </motion.div>
 
@@ -171,8 +171,8 @@ export const Hero: React.FC = () => {
     <Image
       src="/big-five.png"
       alt="Big Five"
-      width={620}
-      height={520}
+      width={650}
+      height={550}
       className="drop-shadow-2xl"
     />
   </motion.div>
