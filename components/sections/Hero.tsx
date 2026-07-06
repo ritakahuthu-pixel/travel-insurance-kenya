@@ -126,60 +126,57 @@ export const Hero: React.FC = () => {
           {/* Right Illustration */}
 <motion.div
   variants={itemVariants}
-  className="relative hidden lg:block h-[700px] w-full"
+  className="relative hidden lg:flex items-center justify-center"
 >
-  {/* Mountain fills the entire right side */}
-  <div className="absolute inset-0 rounded-3xl overflow-hidden">
-    <Image
-      src="/mount-kenya.png"
-      alt="Mount Kenya"
-      fill
-      priority
-      className="object-cover"
-    />
-
-    {/* Fade into the left side */}
-    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-sky-50/90" />
-  </div>
-
-  {/* Floating Logo */}
   <motion.div
-    animate={{ y: [0, -10, 0] }}
+    animate={{ y: [0, 15, 0] }}
     transition={{
-      duration: 5,
+      duration: 4,
       repeat: Infinity,
+      ease: "easeInOut",
     }}
-    className="absolute top-8 right-8 z-20"
+    className="relative"
   >
-    <Image
-      src="/logo.png"
-      alt="Safiri Cover"
-      width={160}
-      height={160}
-    />
-  </motion.div>
+    <div className="relative w-[550px] h-[600px]">
 
-  {/* Big Five */}
-  <motion.div
-    animate={{ y: [0, 10, 0] }}
-    transition={{
-      duration: 5,
-      repeat: Infinity,
-    }}
-    className="absolute bottom-0 right-0 z-20"
-  >
-    <Image
-      src="/big-five.png"
-      alt="Big Five"
-      width={650}
-      height={550}
-      className="drop-shadow-2xl"
-    />
+      {/* Mountain */}
+      <Image
+        src="/mount-kenya.png"
+        alt="Mount Kenya"
+        fill
+        priority
+        className="absolute inset-0 object-cover opacity-35"
+      />
+
+      {/* Big Five */}
+      <Image
+        src="/big-five.png"
+        alt="Kenya Big Five"
+        fill
+        priority
+        className="absolute inset-0 object-contain z-10"
+      />
+
+      {/* Logo */}
+      <motion.div
+        className="absolute top-6 left-6 z-20"
+        animate={{ y: [0, -10, 0] }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+        }}
+      >
+        <Image
+          src="/logo.png"
+          alt="Safiri Cover"
+          width={170}
+          height={170}
+        />
+      </motion.div>
+
+    </div>
   </motion.div>
 </motion.div>
-
-            </motion.div>
-          </motion.div>
         </motion.div>
       </Container>
     </section>
@@ -187,4 +184,3 @@ export const Hero: React.FC = () => {
 };
 
 export default Hero;
-
