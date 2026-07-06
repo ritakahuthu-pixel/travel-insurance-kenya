@@ -124,51 +124,32 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Illustration */}
-          <motion.div
-            variants={itemVariants}
-            className="relative h-96 md:h-full hidden lg:flex items-center justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative"
-            >
-              <div className="relative w-[550px] h-[600px]">
-
-  {/* Mountain */}
-  <div className="absolute inset-0 z-0">
+<motion.div
+  variants={itemVariants}
+  className="relative hidden lg:flex items-center justify-center h-[700px] w-full"
+>
+  {/* Mountain Background */}
+  <div className="absolute inset-0 rounded-3xl overflow-hidden">
     <Image
       src="/mount-kenya.png"
       alt="Mount Kenya"
       fill
       priority
-      className="object-contain opacity-30"
+      className="object-cover"
     />
+
+    {/* Fade mountain into the left side */}
+    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-sky-50/90" />
   </div>
 
-  {/* Animals */}
-  <div className="absolute inset-0 z-10">
-    <Image
-      src="/big-five.png"
-      alt="Big Five"
-      fill
-      priority
-      className="object-contain"
-    />
-  </div>
-
-  {/* Logo */}
+  {/* Floating Logo */}
   <motion.div
-    className="absolute top-6 left-6 z-20"
     animate={{ y: [0, -10, 0] }}
     transition={{
-      repeat: Infinity,
       duration: 5,
+      repeat: Infinity,
     }}
+    className="absolute top-8 right-8 z-20"
   >
     <Image
       src="/logo.png"
@@ -178,7 +159,24 @@ export const Hero: React.FC = () => {
     />
   </motion.div>
 
-</div>
+  {/* Big Five */}
+  <motion.div
+    animate={{ y: [0, 10, 0] }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+    }}
+    className="absolute bottom-0 right-0 z-20"
+  >
+    <Image
+      src="/big-five.png"
+      alt="Big Five"
+      width={620}
+      height={520}
+      className="drop-shadow-2xl"
+    />
+  </motion.div>
+</motion.div>
 
             </motion.div>
           </motion.div>
