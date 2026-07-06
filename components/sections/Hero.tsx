@@ -138,40 +138,46 @@ export const Hero: React.FC = () => {
               className="relative"
             >
               <div className="relative w-[550px] h-[600px]">
-  {/* Mount Kenya background */}
-  <Image
-    src="/mount-kenya.webp"
-    alt="Mount Kenya"
-    fill
-    className="object-contain opacity-25"
-  />
 
-  {/* Big Five */}
-  <Image
-    src="/big-five.webp"
-    alt="Kenya Big Five Wildlife"
-    fill
-    className="object-contain z-10"
-  />
+  {/* Mountain */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/mount-kenya.png"
+      alt="Mount Kenya"
+      fill
+      priority
+      className="object-contain opacity-30"
+    />
+  </div>
 
-  {/* Floating logo */}
+  {/* Animals */}
+  <div className="absolute inset-0 z-10">
+    <Image
+      src="/big-five.png"
+      alt="Big Five"
+      fill
+      priority
+      className="object-contain"
+    />
+  </div>
+
+  {/* Logo */}
   <motion.div
-    animate={{ y: [0, -12, 0] }}
+    className="absolute top-6 left-6 z-20"
+    animate={{ y: [0, -10, 0] }}
     transition={{
       repeat: Infinity,
       duration: 5,
-      ease: "easeInOut",
     }}
-    className="absolute top-6 left-6 z-20"
   >
     <Image
       src="/logo.png"
       alt="Safiri Cover"
       width={170}
       height={170}
-      className="drop-shadow-2xl"
     />
-                </motion.div>
+  </motion.div>
+
 </div>
 
             </motion.div>
